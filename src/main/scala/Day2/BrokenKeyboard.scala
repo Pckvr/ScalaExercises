@@ -9,12 +9,14 @@ object BrokenKeyboard extends App {
   val alphabet = ('a' to 'z').toList.to[ListBuffer]
 
 
-  //def longestWord() = {
-  // still need to add user defined keyboard capability
-    val random = scala.util.Random
-    val noKeyboards = random.nextInt(9) + 1
 
-    val invalidLetters = (alphabet -= ('a', 'd', 'e', 't')).toList
+  def longestWord(noKeyboards:Int, keys:String, longestWord:String) = {
+  // still need to add user defined keyboard capability
+//    val random = scala.util.Random
+//    val noKeyboards = random.nextInt(9) + 1
+
+//    val invalidLetters = (alphabet -= ('a', 'd', 'e', 't')).toList
+    val invalidLetters = alphabet -= keys.toArray
     println(invalidLetters)
 
     val validWords = words.filter(word => !invalidLetters.exists(letter => word.contains(letter.toString)))
@@ -33,7 +35,7 @@ object BrokenKeyboard extends App {
     //    var word = letter
     //    println(word)
     //  }
-  //}
+  }
 }
 
 
