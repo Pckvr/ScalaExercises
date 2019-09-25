@@ -1,6 +1,5 @@
 package Day1
 
-
 object IterationRecursion extends App{
 
   def iterationRecursion(str:String, int:Int):Unit= {

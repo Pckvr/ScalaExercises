@@ -2,13 +2,11 @@ package Day1
 
 object Conditionals extends App{
 
-  def conditionals(int1:Int, int2:Int, check:Boolean):Unit = {
+  def conditionals(int1:Int, int2:Int, check:Boolean)= {
     if (check) {
-      val sum: Int = int1 + int2
-      println(sum)
+      println(int1 + int2)
     }: Unit else if (!check) {
-      val sum: Int = int1 * int2
-      println(sum)
+      println(int1 * int2)
     }
 
   }

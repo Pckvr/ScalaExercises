@@ -7,8 +7,8 @@ object FizzBuzz extends App{
 
     for ( i <- 1 to int) {
 
-      var iBy3:Boolean = i%3 ==0:Boolean
-      var iBy5:Boolean = i%5 ==0:Boolean
+      val iBy3:Boolean = i%3 ==0
+      val iBy5:Boolean = i%5 ==0
 
       if (iBy3 && iBy5 :Boolean) {
         println(str1+str2)
@@ -23,6 +23,6 @@ object FizzBuzz extends App{
         println(i)
       }
     }
-  }:Unit
+  }
 fizzbuzz("Fizz", "Buzz", 15)
 }

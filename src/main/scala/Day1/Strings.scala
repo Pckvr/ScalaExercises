@@ -4,10 +4,10 @@ object Strings extends App {
 
 
   def strings(strParam: String, intParam: Int): Unit = {
-    val lenFromEnd: Int = strParam.length - intParam
-    println(lenFromEnd)
 
-  }:Unit
+    println(strParam.length - intParam)
+
+  }
 
   strings("hello", 2)
 }
