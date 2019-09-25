@@ -5,7 +5,7 @@ object Conditionals extends App{
   def conditionals(int1:Int, int2:Int, check:Boolean)= {
     if (check) {
       println(int1 + int2)
-    }: Unit else if (!check) {
+    } else if (!check) {
       println(int1 * int2)
     }
 
