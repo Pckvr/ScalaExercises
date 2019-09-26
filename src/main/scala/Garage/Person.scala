@@ -6,16 +6,7 @@ abstract class Person {
   val forename: String
   val surname: String
   val address: Address
-  var telephoneHome: String
-  var telephoneMobile: String
+  var mobile: String
   var email: String
 
 }
-
-//  override def toString: String =
-//    s"""$title $forename $surname,
-//       |$address,
-//       |$telephoneHome,
-//       |$telephoneMobile
-//       |""".stripMargin
-

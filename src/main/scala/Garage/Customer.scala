@@ -8,8 +8,7 @@ class Customer (
   val forename: String,
   val surname: String,
   val address: Address,
-  var telephoneHome: String,
-  var telephoneMobile: String,
+  var mobile: String,
   var email: String,
   var vehicleID: List[Int]     //can have multiple vehicles
    ) extends Person {
@@ -19,16 +18,14 @@ class Customer (
            forename:String,
            surname:String,
            address: Address,
-           telephoneHome: String,
-           telephoneMobile:String,
+           mobile:String,
            email:String) = this (
     Customer.generateId(), //create auto id
     title,
     forename,
     surname,
     address: Address,
-    telephoneHome,
-    telephoneMobile,
+    mobile,
     email,
     List(0)
   )
@@ -37,8 +34,7 @@ class Customer (
       s"""$id
          |$title $forename $surname
          |$address
-         |$telephoneHome
-         |$telephoneMobile
+         |$mobile
          |$email""".stripMargin
 
 }

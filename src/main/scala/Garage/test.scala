@@ -12,8 +12,7 @@ object test extends App{
       town = "Test Town",
       city = "Test City",
       postcode = "T3 5TY"),
-    telephoneHome = "0123456789",
-    telephoneMobile = "0123456789",
+    mobile = "0123456789",
     email = "test@test.com"
   ))
   var Tom = println(new Customer(
@@ -26,8 +25,7 @@ object test extends App{
       town = "Test Town",
       city = "Test City",
       postcode = "T3 5TY"),
-    telephoneHome = "0123456789",
-    telephoneMobile = "0123456789",
+    mobile = "0123456789",
     email = "test@test.com"
   ))
 
@@ -41,8 +39,7 @@ object test extends App{
       town = "Testing Town",
       city = "Testing City",
       postcode = "T3 5TY"),
-    telephoneHome = "0123456789",
-    telephoneMobile = "0123456789",
+    mobile = "0123456789",
     email = "test@test.com",
     jobRole = "Mechanic"
   ))

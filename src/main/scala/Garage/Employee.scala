@@ -6,8 +6,7 @@ class Employee (
   val forename: String,
   val surname: String,
   val address: Address,
-  var telephoneHome: String,
-  var telephoneMobile: String,
+  var mobile: String,
   var email: String,
   var jobRole: String //enum in future
     ) extends Person {
@@ -17,8 +16,7 @@ class Employee (
            forename:String,
            surname:String,
            address: Address,
-           telephoneHome: String,
-           telephoneMobile:String,
+           mobile:String,
            email:String,
            jobRole: String) = this (
     Employee.generateId(), //create auto id
@@ -26,8 +24,7 @@ class Employee (
     forename,
     surname,
     address: Address,
-    telephoneHome,
-    telephoneMobile,
+    mobile,
     email,
     jobRole
   )
@@ -36,8 +33,7 @@ class Employee (
     s"""$id
        |$title $forename $surname,
        |$address,
-       |$telephoneHome,
-       |$telephoneMobile,
+       |$mobile,
        |$jobRole
        |$email""".stripMargin
 
