@@ -9,3 +9,8 @@ abstract class Vehicle {
   val colour: String
   val customerID: Int
 }
+
+object Vehicle extends GenerateId {
+  var idCount = 0
+  generateId()
+}

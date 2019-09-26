@@ -47,5 +47,21 @@ object test extends App{
     jobRole = "Mechanic"
   ))
 
+  var CarTest = println(new Car(
+    regNo = "AB12 CDE",
+    make = "Ford",
+    model= "Fiesta",
+    colour = "Blue",
+    customerID = 1
+  ))
+
+  var BikeTest = println(new Car(
+    regNo = "AB12 CDE",
+    make = "Kawasaki",
+    model= "Ninja",
+    colour = "red",
+    customerID = 2
+  ))
+
 
 }

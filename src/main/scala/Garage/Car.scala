@@ -10,24 +10,24 @@ class Car (
   val customerID: Int,
       ) extends Vehicle {
 
-//  def this(vehicleID: Int,
-//           regNo: String,
-//           vehicleType:String,
-//           make:String,
-//           model: String,
-//           colour:String,
-//           customerID:Int) = this (
-//    vehicleID, //create auto id
-//    regNo,
-//    vehicleType,
-//    make,
-//    model,
-//    colour,
-//    customerID, //add function to find id from email address??
-//  )
+  def this(
+           regNo: String,
+           make:String,
+           model: String,
+           colour:String,
+           customerID:Int) = this (
+    Vehicle.generateId(), //create auto id
+    regNo,
+    "Car",
+    make,
+    model,
+    colour,
+    customerID, //add function to find id from email address?? And to limit to existing users
+  )
 
   override def toString: String =
-    s"""$regNo
+    s"""$vehicleID
+       |$regNo
        |$vehicleType
        |$make $model
        |$colour
