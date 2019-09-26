@@ -14,7 +14,8 @@ object UniqueSum extends App{
 //    val sum = toBeAdded.sum
 
     //println("List of numbers is " + numbers)
-    println("The unique sum is " + sum)
+    println("The unique sum of " + int1 + ", " + int2 + ", " + int3 + " is " + sum)
+
 
   }
     uniqueSum(1, 2, 3)
