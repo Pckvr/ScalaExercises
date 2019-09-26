@@ -43,11 +43,6 @@ class Customer (
 
 }
 
-object Customer {
+object Customer extends GenerateId {
   var idCount = 0
-
-  def generateId(): Int = {
-    idCount += 1
-    idCount
-  }
 }
