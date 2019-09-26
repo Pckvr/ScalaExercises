@@ -20,6 +20,3 @@ class Employee (
        |""".stripMargin
 
 }
-               )
-
-}
