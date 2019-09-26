@@ -11,6 +11,7 @@ object Functional1 extends App{
   println(availableIds)
 
   val groupedIds = java.util.TimeZone.getAvailableIDs.mkString(", ").split("/").tail.mkString(", ").split(", ").grouped(2).flatMap(_.take(1)).grouped(10).toArray.mkString(", ")
+  println(groupedIds)
 
 
 
