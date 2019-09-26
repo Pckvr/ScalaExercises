@@ -6,9 +6,9 @@ class Garage {
   //holds ids for vehicles, customers, employees
 
 
-  var cars = List(0)
-  var customers = List(0)
-  var employees = List(0)
+  var carsList: List[Int] = List()
+  var customersList: List[Int] = List()
+  var employeesList: List[Int] = List()
 
 
 }

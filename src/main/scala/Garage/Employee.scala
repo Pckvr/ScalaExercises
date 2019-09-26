@@ -12,25 +12,25 @@ class Employee (
   var jobRole: String //enum in future
     ) extends Person {
 
-//  def this(id: Int,
-//           title: String,
-//           forename:String,
-//           surname:String,
-//           address: Address,
-//           telephoneHome: String,
-//           telephoneMobile:String,
-//           email:String,
-//           jobRole: String) = this (
-//    id, //create auto id
-//    title,
-//    forename,
-//    surname,
-//    address: Address,
-//    telephoneHome,
-//    telephoneMobile,
-//    email,
-//    jobRole
-//  )
+  def this(
+           title: String,
+           forename:String,
+           surname:String,
+           address: Address,
+           telephoneHome: String,
+           telephoneMobile:String,
+           email:String,
+           jobRole: String) = this (
+    Employee.generateId(), //create auto id
+    title,
+    forename,
+    surname,
+    address: Address,
+    telephoneHome,
+    telephoneMobile,
+    email,
+    jobRole
+  )
 
   override def toString: String =
     s"""$id
@@ -41,4 +41,9 @@ class Employee (
        |$jobRole
        |$email""".stripMargin
 
+}
+
+object Employee extends GenerateId {
+  var idCount = 0
+  generateId()
 }

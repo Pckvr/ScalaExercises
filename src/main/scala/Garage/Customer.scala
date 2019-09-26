@@ -45,4 +45,5 @@ class Customer (
 
 object Customer extends GenerateId {
   var idCount = 0
+  generateId()
 }
