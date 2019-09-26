@@ -21,8 +21,7 @@ class Customer (
            address: Address,
            telephoneHome: String,
            telephoneMobile:String,
-           email:String,
-           vehicleID: List[Int]) = this (
+           email:String) = this (
     id, //create auto id
     title,
     forename,
@@ -35,10 +34,10 @@ class Customer (
   )
 
     override def toString: String =
-      s"""$title $forename $surname,
-         |$address,
-         |$telephoneHome,
+      s"""$title $forename $surname
+         |$address
+         |$telephoneHome
          |$telephoneMobile
-         |""".stripMargin
+         |$email""".stripMargin
 
 }

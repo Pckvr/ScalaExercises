@@ -12,25 +12,25 @@ class Employee (
   var jobRole: String //enum in future
     ) extends Person {
 
-  def this(id: Int,
-           title: String,
-           forename:String,
-           surname:String,
-           address: Address,
-           telephoneHome: String,
-           telephoneMobile:String,
-           email:String,
-           jobRole: String) = this (
-    id, //create auto id
-    title,
-    forename,
-    surname,
-    address: Address,
-    telephoneHome,
-    telephoneMobile,
-    email,
-    jobRole
-  )
+//  def this(id: Int,
+//           title: String,
+//           forename:String,
+//           surname:String,
+//           address: Address,
+//           telephoneHome: String,
+//           telephoneMobile:String,
+//           email:String,
+//           jobRole: String) = this (
+//    id, //create auto id
+//    title,
+//    forename,
+//    surname,
+//    address: Address,
+//    telephoneHome,
+//    telephoneMobile,
+//    email,
+//    jobRole
+//  )
 
   override def toString: String =
     s"""$title $forename $surname,
@@ -38,6 +38,6 @@ class Employee (
        |$telephoneHome,
        |$telephoneMobile,
        |$jobRole
-       |""".stripMargin
+       |$email""".stripMargin
 
 }

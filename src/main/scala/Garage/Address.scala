@@ -8,10 +8,9 @@ class Address (
   var postcode: String) {
 
     override def toString: String =
-      s"""$houseNo $street,
-         |$town,
-         |$city,
-         |$postcode
-         |""".stripMargin
+      s"""$houseNo $street
+         |$town
+         |$city
+         |$postcode""".stripMargin
 
 }
