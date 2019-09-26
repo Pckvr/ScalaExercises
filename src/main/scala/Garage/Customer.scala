@@ -14,7 +14,7 @@ class Customer (
   var vehicleID: List[Int]     //can have multiple vehicles
    ) extends Person {
 
-  def this(id: Int,
+  def this(
            title: String,
            forename:String,
            surname:String,
@@ -22,7 +22,7 @@ class Customer (
            telephoneHome: String,
            telephoneMobile:String,
            email:String) = this (
-    id, //create auto id
+    Customer.generateId(), //create auto id
     title,
     forename,
     surname,
@@ -34,10 +34,20 @@ class Customer (
   )
 
     override def toString: String =
-      s"""$title $forename $surname
+      s"""$id
+         |$title $forename $surname
          |$address
          |$telephoneHome
          |$telephoneMobile
          |$email""".stripMargin
 
+}
+
+object Customer {
+  var idCount = 0
+
+  def generateId(): Int = {
+    idCount += 1
+    idCount
+  }
 }

@@ -33,7 +33,8 @@ class Employee (
 //  )
 
   override def toString: String =
-    s"""$title $forename $surname,
+    s"""$id
+       |$title $forename $surname,
        |$address,
        |$telephoneHome,
        |$telephoneMobile,
