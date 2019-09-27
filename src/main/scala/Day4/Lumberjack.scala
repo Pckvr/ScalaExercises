@@ -3,6 +3,9 @@ package Day4
 object Lumberjack extends App {
 
   def logPileSorter(logPiles: Array[Int], newLogs: Int, indexCount: Int = 0):Any = {
+
+
+
     if (newLogs != 0) {
       logPileSorter(logPiles, newLogs, indexCount = 0)
       if (indexCount < logPiles.length) {
