@@ -18,8 +18,8 @@ object CreditCard extends App{
       }
     }
       else {
-      println(numberWithCheck.mkString("").map(_.asDigit))
-      println(numberWithCheck.mkString("").map(_.asDigit).sum)
+      //println(numberWithCheck.mkString("").map(_.asDigit))
+      //println(numberWithCheck.mkString("").map(_.asDigit).sum)
       numberWithCheck.mkString("").map(_.asDigit).sum % 10 == 0
         }
       }
