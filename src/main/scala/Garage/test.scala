@@ -2,7 +2,7 @@ package Garage
 
 object test extends App{
 
-  var Bob = println(new Customer(
+  val Bob = println(new Customer(
     title = "Mr",
     forename = "Bob",
     surname = "Test",
@@ -15,7 +15,7 @@ object test extends App{
     mobile = "0123456789",
     email = "test@test.com"
   ))
-  var Tom = println(new Customer(
+  val Tom = println(new Customer(
     title = "Mr",
     forename = "Bob",
     surname = "Test",
@@ -29,7 +29,7 @@ object test extends App{
     email = "test@test.com"
   ))
 
-  var Pete = println(new Employee(
+  val Pete = println(new Employee(
     title = "Mr",
     forename = "Pete",
     surname = "Testo",
@@ -44,7 +44,7 @@ object test extends App{
     jobRole = "Mechanic"
   ))
 
-  var CarTest = println(new Car(
+  val CarTest = println(new Car(
     regNo = "AB12 CDE",
     make = "Ford",
     model= "Fiesta",
@@ -52,7 +52,7 @@ object test extends App{
     customerID = 1
   ))
 
-  var BikeTest = println(new Car(
+  val BikeTest = println(new Car(
     regNo = "AB12 CDE",
     make = "Kawasaki",
     model= "Ninja",
