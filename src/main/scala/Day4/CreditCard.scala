@@ -12,10 +12,8 @@ object CreditCard extends App{
     if (index <= (numberWithCheck.length-1) ) {
       if (index % 2 != 0) {
         numberWithCheck.update(index, numberWithCheck(index)*2)
-        validateIdentifyingNumber(numberWithCheck: ListBuffer[Int], index + 1)
-      } else {
-        validateIdentifyingNumber(numberWithCheck: ListBuffer[Int], index + 1)
       }
+      validateIdentifyingNumber(numberWithCheck: ListBuffer[Int], index + 1)
     }
       else {
       //println(numberWithCheck.mkString("").map(_.asDigit))
