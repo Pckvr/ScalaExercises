@@ -8,7 +8,8 @@ class Employee (
   val address: Address,
   var mobile: String,
   var email: String,
-  var jobRole: String //enum in future
+  var jobRole: String, //enum in future
+  var isAvailable: Boolean
     ) extends Person {
 
   def this(
@@ -26,7 +27,8 @@ class Employee (
     address: Address,
     mobile,
     email,
-    jobRole
+    jobRole,
+    false
   )
 
   override def toString: String =
