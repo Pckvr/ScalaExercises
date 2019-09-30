@@ -11,5 +11,8 @@ class Calculator {
   def multiply(num1: Double, num2: Double) = {
     num1 * num2
   }
+  def divide(num1: Double, num2: Double) = {
+    num1/num2
+  }
 
 }

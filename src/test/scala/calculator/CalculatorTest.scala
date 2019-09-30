@@ -23,6 +23,9 @@ class CalculatorTest extends BaseTestingClass {
   it should "be able to multiply two numbers" in {
     assert(calculator.multiply(5, 4) == 20)
   }
+  it should "be able to divide two numbers" in {
+    assert(calculator.divide(10,2) ==5)
+  }
 
 
 
