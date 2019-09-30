@@ -26,6 +26,9 @@ class CalculatorTest extends BaseTestingClass {
   it should "be able to divide two numbers" in {
     assert(calculator.divide(10,2) ==5)
   }
+  it should "not be able to divide by zero" in {
+    assert(calculator.divide(10, 0) == println("You can not divide by zero!"))
+  }
 
 
 
