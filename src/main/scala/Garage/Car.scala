@@ -8,6 +8,7 @@ class Car (
   val model: String,
   val colour: String,
   val customerID: Int,
+  var partsList: Array[Part],
   var isFixed:Boolean
       ) extends Vehicle {
 
@@ -24,6 +25,7 @@ class Car (
     model,
     colour,
     customerID, //add function to find id from email address?? And to limit to existing users
+    Part.generateVehicleParts(),
     false
   )
 

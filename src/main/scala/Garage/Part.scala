@@ -21,8 +21,9 @@ class Part (val name:String,
 object Part {
   val partsList: List[String] = List("front tyre(s)", "rear tyre", "windscreen", "engine", "mirrors", "radio", "headlights", "indicator lights", "brake pads", "chassis")
 
-  def generateVehicleParts(): Unit ={
+  def generateVehicleParts(): Array[Part] ={
     var vehicleParts: Array[Part] = Array()
     partsList.foreach(name => {vehicleParts :+ new Part(name)})
+    vehicleParts
   }
 }
