@@ -5,27 +5,29 @@ class Garage {
   //collection class
   //holds ids for vehicles, customers, employees
 
-  var vehicleList: Map[Int, Vehicle] = Map()
-  var employeeList: Map[Int, Employee] = Map()
-  var customerList: Map[Int, Customer] = Map()
+  val vehicleList: Map[Int, Vehicle] = Map()
+  val employeeList: Map[Int, Employee] = Map()
+  val customerList: Map[Int, Customer] = Map()
 
   def newCar(regNo: String, make: String, model: String, colour: String, customerID: Int) = {
     val car = new Car(regNo, make, model, colour, customerID)
-    vehicleList += (car.vehicleID -> car)
+    val vehicleList = (car.vehicleID -> car) + vehicleList
   }
   def newBike(regNo: String, make: String, model: String, colour: String, customerID: Int) = {
     val bike = new Bike(regNo, make, model, colour, customerID)
-    vehicleList += (bike.vehicleID -> bike)
+    val vehicleList = (bike.vehicleID -> bike) + vehicleList
   }
   def registerEmployee(title: String,forename: String,surname: String, houseNo:Int, street: String, town: String, city: String, postcode: String, mobile: String, email: String , jobRole: String) = {
     val employee = new Employee(title, forename, surname, new Address(houseNo, street, town, city, postcode), mobile, email, jobRole)
-    employeeList += (employee.id -> employee)
+    val employeeList = (employee.id -> employee) + employeeList
   }
   def registerCustomer(title: String,forename: String,surname: String, houseNo:Int, street: String, town: String, city: String, postcode: String, mobile: String, email: String) = {
     val customer = new Customer(title, forename, surname, new Address(houseNo, street, town, city, postcode), mobile, email)
-    customerList += (customer.id -> customer)
+    val customerList = (customer.id -> customer) + customerList
   }
 
-  def fixVehicle
+  def fixVehicle(vehicleId:Int): Unit ={
+
+  }
 
 }
