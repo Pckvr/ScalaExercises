@@ -5,9 +5,9 @@ class Garage {
   //collection class
   //holds ids for vehicles, customers, employees
 
-  var vehicleList: Map[Int, Vehicle] = Map()
-  var employeeList: Map[Int, Employee] = Map()
-  var customerList: Map[Int, Customer] = Map()
+  val vehicleList: Map[Int, Vehicle] = Map()
+  val employeeList: Map[Int, Employee] = Map()
+  val customerList: Map[Int, Customer] = Map()
 
   def newCar(regNo: String, make: String, model: String, colour: String, customerID: Int) = {
     val car = new Car(regNo, make, model, colour, customerID)
