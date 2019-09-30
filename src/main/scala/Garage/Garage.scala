@@ -44,8 +44,9 @@ class Garage {
   }
 
   def garageContents() = {
-    vehicleList.foreach(print)
-  }
+    vehicleList.values.foreach(vehicle=>println(vehicle.toString))
+    }
+
 
   def openGarage(): Unit ={
     isGarageOpen = true

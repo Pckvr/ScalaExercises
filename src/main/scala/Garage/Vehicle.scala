@@ -9,9 +9,20 @@ abstract class Vehicle {
   val colour: String
   val customerID: Int
   var isFixed: Boolean
+
+  override def toString: String =
+    s"""$vehicleID
+       |$regNo
+       |$vehicleType
+       |$make $model
+       |$colour
+       |$customerID""".stripMargin
+
 }
 
 object Vehicle extends GenerateId {
   var idCount = 0
   generateId()
 }
+
+
