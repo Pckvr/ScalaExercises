@@ -28,6 +28,10 @@ class Garage {
     customerList += (customer.id -> customer)
   }
 
+  def removeVehicle(vehicleId:Int) = {
+    vehicleList -= vehicleId
+  }
+
   def fixVehicle(vehicleId:Int): Unit ={
     val fixedVehicle = vehicleList(vehicleId)
     fixedVehicle.isFixed = true
