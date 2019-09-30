@@ -8,6 +8,7 @@ abstract class Vehicle {
   val model: String
   val colour: String
   val customerID: Int
+  val isFixed: Boolean
 }
 
 object Vehicle extends GenerateId {

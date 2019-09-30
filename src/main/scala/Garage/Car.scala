@@ -7,7 +7,8 @@ class Car (
   val make: String,
   val model: String,
   val colour: String,
-  val customerID: Int
+  val customerID: Int,
+  val isFixed:Boolean
       ) extends Vehicle {
 
   def this(
@@ -22,7 +23,8 @@ class Car (
     make,
     model,
     colour,
-    customerID //add function to find id from email address?? And to limit to existing users
+    customerID, //add function to find id from email address?? And to limit to existing users
+    false
   )
 
   override def toString: String =
