@@ -18,7 +18,9 @@ class Calculator {
     else {
       println("You can not divide by zero!")
     }
-
+  }
+  def power(num1:Double, num2:Double) = {
+    scala.math.pow(num1, num2)
   }
 
 }
