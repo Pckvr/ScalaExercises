@@ -2,32 +2,52 @@ package Garage
 
 class Garage {
 
+  var isGarageOpen = true
+
   //collection class
   //holds ids for vehicles, customers, employees
 
-  val vehicleList: Map[Int, Vehicle] = Map()
-  val employeeList: Map[Int, Employee] = Map()
-  val customerList: Map[Int, Customer] = Map()
+  var vehicleList: Map[Int, Vehicle] = Map()
+  var employeeList: Map[Int, Employee] = Map()
+  var customerList: Map[Int, Customer] = Map()
 
   def newCar(regNo: String, make: String, model: String, colour: String, customerID: Int) = {
     val car = new Car(regNo, make, model, colour, customerID)
-    val vehicleList = (car.vehicleID -> car) + vehicleList
+    vehicleList += (car.vehicleID -> car)
   }
   def newBike(regNo: String, make: String, model: String, colour: String, customerID: Int) = {
     val bike = new Bike(regNo, make, model, colour, customerID)
-    val vehicleList = (bike.vehicleID -> bike) + vehicleList
+    vehicleList += (bike.vehicleID -> bike)
   }
   def registerEmployee(title: String,forename: String,surname: String, houseNo:Int, street: String, town: String, city: String, postcode: String, mobile: String, email: String , jobRole: String) = {
     val employee = new Employee(title, forename, surname, new Address(houseNo, street, town, city, postcode), mobile, email, jobRole)
-    val employeeList = (employee.id -> employee) + employeeList
+    employeeList += (employee.id -> employee)
   }
   def registerCustomer(title: String,forename: String,surname: String, houseNo:Int, street: String, town: String, city: String, postcode: String, mobile: String, email: String) = {
     val customer = new Customer(title, forename, surname, new Address(houseNo, street, town, city, postcode), mobile, email)
-    val customerList = (customer.id -> customer) + customerList
+    customerList += (customer.id -> customer)
   }
 
   def fixVehicle(vehicleId:Int): Unit ={
+    val fixedVehicle = vehicleList(vehicleId)
+    fixedVehicle.isFixed = true
+    vehicleList -= vehicleId
+    vehicleList += (vehicleId -> fixedVehicle)
+  }
 
+  def calculateBill(partsBroken:List[String], labourHours:Double) = { //Will be type List[Parts]
+
+  }
+
+  def garageContents() = {
+    vehicleList.foreach(print)
+  }
+
+  def openGarage(): Unit ={
+    isGarageOpen = true
+  }
+  def closeGarage(): Unit ={
+    isGarageOpen = false
   }
 
 }

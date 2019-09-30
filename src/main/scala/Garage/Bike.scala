@@ -8,7 +8,7 @@ class Bike  (
   val model: String,
   val colour: String,
   val customerID: Int,
-  val isFixed:Boolean
+  var isFixed:Boolean
             ) extends Vehicle {
 
     def this(

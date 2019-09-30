@@ -1,5 +1,6 @@
 package Garage
 
+
 object test extends App{
 
   val Bob = println(new Customer(
@@ -59,6 +60,5 @@ object test extends App{
     colour = "red",
     customerID = 2
   ))
-
 
 }
