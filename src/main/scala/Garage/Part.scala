@@ -4,7 +4,7 @@ import scala.util.Random
 
 class Part (val name:String,
             var broken: Boolean = Random.nextInt(100) match{
-              case _%10 == 0 => true
+              //case (_%10 == 0) => true
               case _ => false
             },
             val cost: Double = Random.between(10.0, 500.0),
