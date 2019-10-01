@@ -2,7 +2,7 @@ package Garage
 
 import org.mongodb.scala._
 
-object MongoConnection extends App{
+class MongoConnection {
 
   val mongoClientPath = "//localhost"
   val databaseName = "garage"
@@ -25,6 +25,5 @@ object MongoConnection extends App{
     val collection = getDatabase().getCollection(collectionName)
     collection
   }
-
 
 }
