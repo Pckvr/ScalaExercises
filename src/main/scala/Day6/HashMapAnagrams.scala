@@ -12,7 +12,7 @@ def storeLinesInArray(filename: String) = {
 
   def extractWordFromLine(filename: String) = {
     val source = Source.fromFile(filename)
-    val wordsArray = source.getLines().sp
+    val wordsArray = source.getLines().toString()
     println(wordsArray)
   }
 
