@@ -10,4 +10,10 @@ def storeLinesInArray(filename: String) = {
   linesArray
 }
 
+  def extractWordFromLine(filename: String) = {
+    val source = Source.fromFile(filename)
+    val wordsArray = source.getLines().sp
+    println(wordsArray)
+  }
+
 }
