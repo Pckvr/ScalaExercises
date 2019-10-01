@@ -15,8 +15,8 @@ class HashMapsAnagramsTest extends BaseTestingClass{
     assert(true)
   }
 
-  "The method readFromFile" should " be able to read a line of words from a file" in {
-  assert(hashMapsAnagrams.readLineFromFile(wordList) == "race catch offer\ntrain hope dog\nsnake rain trap")
+  "The method readFromFile" should " be able to store the lines of text in an array" in {
+  assert(hashMapsAnagrams.readLineFromFile(wordList) == Array("race catch offer", "train hope dog", "snake rain trap"))
   }
 
 }
