@@ -1,6 +1,7 @@
 package Garage
 
 import org.mongodb.scala._
+import org.mongodb.scala.bson.{BsonTransformer, BsonValue}
 import org.mongodb.scala.model.Filters._
 
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -8,7 +9,7 @@ import scala.util.{Failure, Success}
 
 class MongoCRUD extends MongoConnection {
 
-  def addDocument(document: Document, collectionName: String) = {
+  def addDocument(document: Object, collectionName: String) = {
     getCollection(collectionName).insertOne(document)
       .subscribe(new Observer[Completed] {
         override def onNext(result: Completed): Unit = println("Document has been inserted")
