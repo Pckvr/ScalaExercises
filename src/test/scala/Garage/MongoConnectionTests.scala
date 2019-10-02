@@ -7,18 +7,20 @@ import org.mockito.Mockito._
 class MongoConnectionTests extends BaseTestingClass {
 
   var mongoConnection: MongoConnection = _
-
+  var mockMongoConnection = mock[MongoConnection]
   before {
     mongoConnection = new MongoConnection
   }
 
   "The function getConnection" should "return a mongo client" in {
-    val mockMongoConnection = mock[MongoConnection]
     when(mockMongoConnection.getConnection()).thenReturn(MongoClient("mongodb://test"))
     assert(mockMongoConnection.getConnection().isInstanceOf[MongoClient])
   }
 
-  "The function closeConnection" should
+//  "The function getDatabase" should "return a database" in {
+//    val mockMongoConnection = mock[MongoConnection]
+//    when(
+//  }
 
 
 
