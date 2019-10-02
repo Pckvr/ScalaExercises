@@ -9,7 +9,6 @@ class BsonConverter {
   }
 
   def objectToDocument(obj:Product) = {
-
     //val objProduct = obj -> obj: Product
 //    val values = obj.productIterator
     val bsonSeq = obj.getClass.getDeclaredFields.map(_.getName -> obj.productIterator.next).toMap.toSeq.map{
