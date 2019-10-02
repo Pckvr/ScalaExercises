@@ -1,7 +1,10 @@
 package Garage
 
 import org.mongodb.scala._
+import org.mongodb.scala.model.Filters._
 
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.util.{Failure, Success}
 
 class MongoCRUD extends MongoConnection {
 
@@ -22,22 +25,23 @@ class MongoCRUD extends MongoConnection {
     getCollection(collectionName).find().head()
   }
 
-  //  def deleteById(collectionName: String, id: Int) = collectionName match {
-  //    case "Employee" | "Customer" => {
-  //      getCollection(collectionName).deleteOne(equal("id", id)).headOption().onComplete {
-  //        onCompleteSuccessFailure()
-  //      }
-  ////    }
-  //    case "Vehicle" | "Car" | "Bike" => {
-  //      getCollection(collectionName).deleteOne(equal("vehicleID", id)).headOption().onComplete {
-  //        onCompleteSuccessFailure()
-  //      }
-  //}
-  //  }
-  //  def onCompleteSuccessFailure(): Unit = {
-  //    case Success(value) => println("Successful")
-  //    case Failure(error) => error.printStackTrace()
-  //  }
+    def deleteById(collectionName: String, id: Int): Unit = collectionName match {
+      case "Employee" | "Customer" =>
+        getCollection(collectionName).deleteOne(equal("id", id)).headOption().onComplete {
+          case Success(value) => println("Successful")
+          case Failure(error) => error.printStackTrace()
+        }
+      case "Vehicle" | "Car" | "Bike" =>
+        getCollection(collectionName).deleteOne(equal("vehicleID", id)).headOption().onComplete {
+          case Success(value) => println("Successful")
+          case Failure(error) => error.printStackTrace()
+        }
+    }
+
+//  def onCompleteSuccessFailure(): Unit = {
+//      case Success(value) => println("Successful")
+//      case Failure(error) => error.printStackTrace()
+//    }
 
 
 
