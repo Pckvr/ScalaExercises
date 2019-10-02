@@ -2,12 +2,10 @@ package Garage
 
 import org.mongodb.scala.bson._
 import resources.BaseTestingClass
-import Garage.Garage
 
 class BsonConverterTest extends BaseTestingClass {
 
   var bsonConverter: BsonConverter = _
-  var garage: Garage = _
 
   before {
     bsonConverter = new BsonConverter
@@ -27,6 +25,6 @@ class BsonConverterTest extends BaseTestingClass {
 
   "objectToDocument" should "be able to convert any object into a bson document" in {
 
-    //assert(bsonConverter.objectToDocument())
+    //assert(bsonConverter.objectToDocument(testCar))
   }
 }
