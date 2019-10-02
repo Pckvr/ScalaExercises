@@ -25,12 +25,13 @@ class MongoConnectionTests extends BaseTestingClass {
     assert(mockMongoConnection.getDatabase().isInstanceOf[MongoDatabase])
   }
 
-//  "The function getCollection" should "return a collection" in {
-//    val mockCollection: com.mongodb.async.client.MongoCollection[Document] = mock[com.mongodb.async.client.MongoCollection[Document]]
-//
-//    when(mockMongoConnection.getCollection("Test")).thenReturn(new MongoCollection[Document](mockCollection))
-//    assert(mockMongoConnection.getCollection("test").isInstanceOf[MongoCollection[Document]])
-//  }
+  "The function getCollection" should "return a collection" in {
+    val mockCollection: com.mongodb.async.client.MongoCollection[Document] = mock[com.mongodb.async.client.MongoCollection[Document]]
+    //val test: MongoCollection[Document] = mock[MongoCollection[Document]]
+
+    when(mockMongoConnection.getCollection("test")).thenReturn(new MongoCollection[Document](mockCollection))
+    assert(mockMongoConnection.getCollection("test").isInstanceOf[MongoCollection[Document]])
+  }
 
 
 
