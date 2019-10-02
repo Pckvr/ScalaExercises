@@ -4,11 +4,11 @@ import scala.util.Random
 
 class Part (val name:String,
             var broken: Boolean = Random.nextInt(100) match{
-              //case (_%10 == 0) => true
+              case _%10 == 0 => true
               case _ => false
             },
-            val cost: Double = Random.between(10.0, 500.0),
-            val labourHours: Double = Random.between(0.5, 10)) {
+            val cost: Int = Random.nextInt(500),
+            val labourHours: Double = Random.nextInt(10)) {
 
   override def toString: String =
     s"""$name
