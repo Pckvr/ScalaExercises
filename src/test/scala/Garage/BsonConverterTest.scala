@@ -25,6 +25,6 @@ class BsonConverterTest extends BaseTestingClass {
 
   "objectToDocument" should "be able to convert any object into a bson document" in {
 
-    //assert(bsonConverter.objectToDocument(testCar))
+    assert(bsonConverter.objectToDocument(testCar))
   }
 }
