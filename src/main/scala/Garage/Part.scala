@@ -2,7 +2,7 @@ package Garage
 
 import scala.util.Random
 
-class Part (val name:String,
+case class Part (val name:String,
             var broken: Boolean = Random.nextInt(100) match{
               //case _ %10 == 0 => true
               case _ => false

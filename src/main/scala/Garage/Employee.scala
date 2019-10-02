@@ -1,6 +1,6 @@
 package Garage
 
-class Employee (
+case class Employee (
   val id: Int,
   val title: String, //could use enums in future
   val forename: String,
