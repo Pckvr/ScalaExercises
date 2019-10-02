@@ -7,9 +7,10 @@ import org.mockito.Mockito._
 class MongoConnectionTests extends BaseTestingClass {
 
   var mongoConnection: MongoConnection = _
-  var mockMongoConnection = mock[MongoConnection]
+  var mockMongoConnection: MongoConnection = _
   before {
     mongoConnection = new MongoConnection
+    mockMongoConnection = mock[MongoConnection]
   }
 
   "The function getConnection" should "return a mongo client" in {
@@ -17,9 +18,18 @@ class MongoConnectionTests extends BaseTestingClass {
     assert(mockMongoConnection.getConnection().isInstanceOf[MongoClient])
   }
 
-//  "The function getDatabase" should "return a database" in {
-//    val mockMongoConnection = mock[MongoConnection]
-//    when(
+  "The function getDatabase" should "return a database" in {
+
+    val mockDatabase :com.mongodb.async.client.MongoDatabase = mock[com.mongodb.async.client.MongoDatabase]
+    when(mockMongoConnection.getDatabase()).thenReturn(MongoDatabase(mockDatabase))
+    assert(mockMongoConnection.getDatabase().isInstanceOf[MongoDatabase])
+  }
+
+//  "The function getCollection" should "return a collection" in {
+//    val mockCollection: com.mongodb.async.client.MongoCollection[Document] = mock[com.mongodb.async.client.MongoCollection[Document]]
+//
+//    when(mockMongoConnection.getCollection("Test")).thenReturn(new MongoCollection[Document](mockCollection))
+//    assert(mockMongoConnection.getCollection("test").isInstanceOf[MongoCollection[Document]])
 //  }
 
 
