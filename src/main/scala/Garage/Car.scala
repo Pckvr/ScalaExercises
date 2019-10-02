@@ -1,6 +1,6 @@
 package Garage
 
-class Car (
+case class Car (
   val vehicleID: Int,
   val regNo: String,
   val vehicleType: String,   //enum in future

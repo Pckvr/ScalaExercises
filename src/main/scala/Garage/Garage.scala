@@ -12,8 +12,9 @@ class Garage {
   var customerList: Map[Int, Customer] = Map()
 
   def newCar(regNo: String, make: String, model: String, colour: String, customerID: Int) = {
-    val car = new Car(regNo, make, model, colour, customerID)
-    vehicleList += (car.vehicleID -> car)
+    val car = new Car(regNo, make, model, colour, customerID): Car
+    //vehicleList += (car.vehicleID -> car)
+    new Car(regNo, make, model, colour, customerID): Car
   }
 
   def newBike(regNo: String, make: String, model: String, colour: String, customerID: Int) = {
