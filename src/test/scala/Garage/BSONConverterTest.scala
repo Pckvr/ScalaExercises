@@ -1,5 +1,0 @@
-package Garage
-
-class BSONConverterTest {
-
-}
