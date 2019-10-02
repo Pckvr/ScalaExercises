@@ -8,8 +8,7 @@ class MongoConnection {
   val databaseName = "garage"
 
   def getConnection(): MongoClient = {
-    val mongoClient = MongoClient("mongodb:" + mongoClientPath)
-    mongoClient
+    MongoClient("mongodb:" + mongoClientPath)
   }
 
   def closeCollection() = {
@@ -17,13 +16,11 @@ class MongoConnection {
   }
 
   def getDatabase(): MongoDatabase = {
-    val database = getConnection().getDatabase(databaseName)
-    database
+    getConnection().getDatabase(databaseName)
   }
 
   def getCollection(collectionName: String): MongoCollection[Document] = {
-    val collection = getDatabase().getCollection(collectionName)
-    collection
+    getDatabase().getCollection(collectionName)
   }
 
   def addDocument(document: Document, collectionName: String) = {
