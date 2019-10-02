@@ -11,7 +11,7 @@ class MongoConnection {
     MongoClient("mongodb:" + mongoClientPath)
   }
 
-  def closeCollection() = {
+  def closeConnection() = {
     getConnection().close()
   }
 
