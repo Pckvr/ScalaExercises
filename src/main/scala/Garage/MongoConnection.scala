@@ -1,8 +1,6 @@
 package Garage
 
 import org.mongodb.scala._
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.util.{Failure, Success}
 
 class MongoConnection {
 
@@ -45,22 +43,22 @@ class MongoConnection {
     getCollection(collectionName).find().head()
   }
 
-  def deleteById(collectionName: String, id: Int) = collectionName match {
-    case "Employee" | "Customer" => {
-      getCollection(collectionName).deleteOne(equal("id", id)).headOption().onComplete {
-        onCompleteSuccessFailure()
-      }
-    }
-    case "Vehicle" | "Car" | "Bike" => {
-      getCollection(collectionName).deleteOne(equal("vehicleID", id)).headOption().onComplete {
-        onCompleteSuccessFailure()
-      }
-}
-  }
-  def onCompleteSuccessFailure(): Unit = {
-    case Success(value) => println("Successful")
-    case Failure(error) => error.printStackTrace()
-  }
+//  def deleteById(collectionName: String, id: Int) = collectionName match {
+//    case "Employee" | "Customer" => {
+//      getCollection(collectionName).deleteOne(equal("id", id)).headOption().onComplete {
+//        onCompleteSuccessFailure()
+//      }
+////    }
+//    case "Vehicle" | "Car" | "Bike" => {
+//      getCollection(collectionName).deleteOne(equal("vehicleID", id)).headOption().onComplete {
+//        onCompleteSuccessFailure()
+//      }
+//}
+//  }
+//  def onCompleteSuccessFailure(): Unit = {
+//    case Success(value) => println("Successful")
+//    case Failure(error) => error.printStackTrace()
+//  }
 
 
 }
