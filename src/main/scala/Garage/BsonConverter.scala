@@ -17,6 +17,7 @@ class BsonConverter {
       case (key, value:Double) => (key, bsonTransformer(value))
       case (key, value:Boolean) => (key, bsonTransformer(value))
       case (key, value:Any) => (key, bsonTransformer(value.toString))
+        // need to add a better list handling case
     }
     bsonTransformer(Document.fromSeq(bsonSeq))
     //Document.fromSeq(bsonSeq)
