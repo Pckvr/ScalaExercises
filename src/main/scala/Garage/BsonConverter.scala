@@ -1,5 +1,6 @@
 package Garage
 
+import org.bson.BsonValue
 import org.mongodb.scala.bson.collection.immutable.Document
 import org.mongodb.scala.bson._
 
@@ -19,7 +20,7 @@ class BsonConverter {
       case (key, value:Seq[Int]) => (key, bsonTransformer(value))
       case (key, value:Seq[String]) => (key, bsonTransformer(value))
       case (key, value:Product) => (key, objectToDocument(value))
-      //case (key, value:Seq[Product]) => (key, objectToDocument(value.foreach))
+     // case (key, value:Seq[Product]) => (key, objectToDocument(value.foreach(_)))
       case (key, value:Any) => (key, bsonTransformer(value.toString))
 
       // need to add a better list handling case
