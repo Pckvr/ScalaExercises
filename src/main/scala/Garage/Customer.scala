@@ -1,8 +1,6 @@
 package Garage
 
-import javax.swing.plaf.BorderUIResource.TitledBorderUIResource
-
-class Customer (
+case class Customer (
   val id: Int,
   val title: String, //could use enums in future
   val forename: String,

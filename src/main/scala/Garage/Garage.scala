@@ -11,24 +11,24 @@ class Garage {
   var employeeList: Map[Int, Employee] = Map()
   var customerList: Map[Int, Customer] = Map()
 
-  def newCar(regNo: String, make: String, model: String, colour: String, customerID: Int) = {
-    val car = new Car(regNo, make, model, colour, customerID)
-    vehicleList += (car.vehicleID -> car)
+  def newCar(regNo: String, make: String, model: String, colour: String, customerID: Int): Car = {
+    //vehicleList += (car.vehicleID -> car)
+    new Car(regNo, make, model, colour, customerID)
   }
 
-  def newBike(regNo: String, make: String, model: String, colour: String, customerID: Int) = {
-    val bike = new Bike(regNo, make, model, colour, customerID)
-    vehicleList += (bike.vehicleID -> bike)
+  def newBike(regNo: String, make: String, model: String, colour: String, customerID: Int):Bike = {
+    new Bike(regNo, make, model, colour, customerID)
+    //vehicleList += (bike.vehicleID -> bike)
   }
 
-  def registerEmployee(title: String,forename: String,surname: String, houseNo:Int, street: String, town: String, city: String, postcode: String, mobile: String, email: String , jobRole: String) = {
-    val employee = new Employee(title, forename, surname, new Address(houseNo, street, town, city, postcode), mobile, email, jobRole)
-    employeeList += (employee.id -> employee)
+  def registerEmployee(title: String,forename: String,surname: String, houseNo:Int, street: String, town: String, city: String, postcode: String, mobile: String, email: String , jobRole: String):Employee = {
+    new Employee(title, forename, surname, new Address(houseNo, street, town, city, postcode), mobile, email, jobRole)
+    //employeeList += (employee.id -> employee)
   }
 
-  def registerCustomer(title: String,forename: String,surname: String, houseNo:Int, street: String, town: String, city: String, postcode: String, mobile: String, email: String) = {
-    val customer = new Customer(title, forename, surname, new Address(houseNo, street, town, city, postcode), mobile, email)
-    customerList += (customer.id -> customer)
+  def registerCustomer(title: String,forename: String,surname: String, houseNo:Int, street: String, town: String, city: String, postcode: String, mobile: String, email: String):Customer = {
+    new Customer(title, forename, surname, new Address(houseNo, street, town, city, postcode), mobile, email)
+    //customerList += (customer.id -> customer)
   }
 
   def removeVehicle(vehicleId:Int) = {
