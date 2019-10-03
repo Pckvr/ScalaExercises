@@ -8,7 +8,7 @@ object BsonConverter extends App{
     transformer(value)
   }
 
-  def objectToDocument(obj:Product) = {
+  def objectToDocument(obj:Product):BsonValue = {
     val values = obj.productIterator
     val bsonSeq = obj.getClass.getDeclaredFields.map(_.getName -> values.next).toMap.toSeq.map{
 //    val bsonValue = objMap.toSeq.map {
@@ -18,7 +18,8 @@ object BsonConverter extends App{
       case (key, value:Boolean) => (key, bsonTransformer(value))
       case (key, value:Seq[Int]) => (key, bsonTransformer(value))
       case (key, value:Seq[String]) => (key, bsonTransformer(value))
-
+      //case (key, value:Seq[Product]) => (key, objectToDocument(value.foreach))
+      case (key, value:Product) => (key, objectToDocument(value))
       case (key, value:Any) => (key, bsonTransformer(value.toString))
 
       // need to add a better list handling case
@@ -27,10 +28,12 @@ object BsonConverter extends App{
     //Document.fromSeq(bsonSeq)
   }
 
-  def printProductIterator(obj:Product)= {
-    val values = obj.productIterator
-    println(obj.getClass.getDeclaredFields.map( _.getName -> values.next).toMap)
-  }
+//  def printProductIterator(obj:Product)= {
+//    val values = obj.productIterator
+//    println(obj.getClass.getDeclaredFields.map( _.getName -> values.next).toMap)
+//  }
+
+  //  printProductIterator(testEmployee)
 
   //parts [LGarage.Part;@548a9f61
 
@@ -40,8 +43,7 @@ object BsonConverter extends App{
   var testBike = garage.newBike("AB12 CDE", "Ducatti", "Something", "Red", 1)
   var testEmployee = garage.registerEmployee("Mr", "Pete", "Smith", 1, "Test Street", "Test Town", "Test City", "T3 5TY", "012345678", "test@test.com", "Mechanic" )
   var testCustomer = garage.registerCustomer("Mr", "Simon", "Jones", 2, "Test Street", "Test Town", "Test City", "T3 5TY", "012345678", "test@test.com")
-
-  printProductIterator(testEmployee)
+//
 
   println(objectToDocument(testCar))
   println(objectToDocument(testBike))

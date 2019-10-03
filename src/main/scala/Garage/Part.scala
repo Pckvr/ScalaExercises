@@ -7,8 +7,8 @@ case class Part (val name:String,
               //case _ %10 == 0 => true
               case _ => false
             },
-            val cost: Int = Random.nextInt(500),
-            val labourHours: Double = Random.nextInt(10)) {
+            cost: Int = Random.nextInt(500),
+            labourHours: Double = Random.nextInt(10)) {
 
   override def toString: String =
     s"""$name
@@ -19,10 +19,10 @@ case class Part (val name:String,
 }
 
 object Part {
-  val partsList: List[String] = List("front tyre(s)", "rear tyre", "windscreen", "engine", "mirrors", "radio", "headlights", "indicator lights", "brake pads", "chassis")
+  val partsList: Seq[String] = Seq("front tyre(s)", "rear tyre", "windscreen", "engine", "mirrors", "radio", "headlights", "indicator lights", "brake pads", "chassis")
 
-  def generateVehicleParts(): Array[Part] ={
-    var vehicleParts: Array[Part] = Array()
+  def generateVehicleParts(): Seq[Part] ={
+    val vehicleParts: Seq[Part] = Seq()
     partsList.foreach(name => {vehicleParts :+ new Part(name)})
     vehicleParts
   }
