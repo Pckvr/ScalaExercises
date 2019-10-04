@@ -8,7 +8,7 @@ case class Customer (
   val address: Address,
   var mobile: String,
   var email: String,
-  var vehicleID: List[Int]     //can have multiple vehicles
+  var vehicleID: Seq[Int]     //can have multiple vehicles
    ) extends Person {
 
   def this(
@@ -25,7 +25,7 @@ case class Customer (
     address: Address,
     mobile,
     email,
-    List(0)
+    Seq(0)
   )
 
     override def toString: String =

@@ -30,7 +30,5 @@ class BsonConverterTest extends BaseTestingClass {
     assert(bsonConverter.objectToDocument(testEmployee).isInstanceOf[BsonDocument])
     assert(bsonConverter.objectToDocument(testCustomer).isInstanceOf[BsonDocument])
 
-
-
   }
 }

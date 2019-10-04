@@ -8,7 +8,7 @@ case class Car (
   val model: String,
   val colour: String,
   val customerID: Int,
-  var partsList: Array[Part],
+  var partsList: Seq[Part],
   var isFixed:Boolean
       ) extends Vehicle {
 
